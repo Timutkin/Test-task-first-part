@@ -5,17 +5,36 @@ import pair.Pair;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * The type Main.
+ */
 public class Main {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         printStatistics(args);
     }
 
+    /**
+     * Print statistics about words.
+     *
+     * @param words the words
+     */
     public static void printStatistics(String[] words){
         System.out.println(String.format("There are %d words in the text", words.length));
         System.out.println("TOP 10:");
         getTop10(words).forEach(o1->System.out.println(o1.getRepeat() + "-" + o1.getWord()));
     }
 
+    /**
+     * Get top 10 list by repeats and name.
+     *
+     * @param words the words
+     * @return the list
+     */
     public static List<Pair>  getTop10(String[] words){
        if (words.length == 0){
            System.err.println("Words not found");
